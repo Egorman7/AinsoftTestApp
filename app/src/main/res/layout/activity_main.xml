@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.and.ainsofttestapp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/load_xml_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/xml_button" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progress="0" />
+
+        <Button
+            android:id="@+id/show_db_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/showDB_button" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

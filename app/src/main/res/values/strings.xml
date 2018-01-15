@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AinsoftTestApp</string>
+    <string name="xml_button">Загрузить XML в БД</string>
+    <string name="showDB_button">Показать БД</string>
+</resources>
