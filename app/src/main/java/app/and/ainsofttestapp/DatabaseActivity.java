@@ -1,6 +1,7 @@
 package app.and.ainsofttestapp;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -39,6 +40,7 @@ public class DatabaseActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         setUpAdapter();
     }
+
 
     private void setUpAdapter(){
         mAdapter = new RecyclerAdapter(getDataFromBD());
@@ -79,6 +81,16 @@ public class DatabaseActivity extends AppCompatActivity {
             this.datalist = datalist;
         }
 
+        private Double parse(String s){
+            Double result;
+            try{
+                result=Double.valueOf(s);
+            } catch (Exception ex){
+                return null;
+            }
+            return result;
+        }
+
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             DataModel dm = datalist.get(position);
@@ -98,7 +110,7 @@ public class DatabaseActivity extends AppCompatActivity {
                     alertDialog.setPositiveButton("Изменить", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Double newPrice = Double.valueOf(input.getText().toString());
+                            Double newPrice = parse(input.getText().toString());
                             if(newPrice!=null){
                                 if(updateDB(id,newPrice)){
                                     Toast.makeText(input.getContext(),"Данные обновлены", Toast.LENGTH_LONG).show();
