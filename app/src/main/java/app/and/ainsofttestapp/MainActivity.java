@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Boolean loadXmlAndWriteToDb(){
         Boolean result = false;
-        //List<DataModel> datalist = new ArrayList<>();
         try {
             URL url = new URL("http://ainsoft.pro/test/test.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
